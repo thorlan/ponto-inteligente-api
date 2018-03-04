@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Optional;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +18,6 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.meudominio.pontointeligente.api.entities.Empresa;
-import com.meudominio.pontointeligente.api.repositories.PopulaTestes;
 import com.meudominio.pontointeligente.api.repository.EmpresaRepository;
 
 @RunWith(SpringRunner.class)
@@ -31,7 +31,7 @@ public class EmpresaServiceTest {
 	@Autowired
 	private EmpresaService empresaService;
 	
-	private final static String CNPJ = PopulaTestes.CNPJ;
+	private static final String CNPJ = "51463645000100";
 	
 	@Before
 	public void setUp() throws Exception{
@@ -50,12 +50,5 @@ public class EmpresaServiceTest {
 		Empresa empresa = this.empresaService.persistir(new Empresa());
 		assertNotNull(empresa);
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 }
